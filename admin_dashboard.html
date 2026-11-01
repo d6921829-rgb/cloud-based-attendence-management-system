@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block title %}Admin Dashboard{% endblock %}{% block content %}
+<div class="page-head"><div><span class="eyebrow">ADMIN PORTAL</span><h1>Hello, {{ session.name }}</h1><p class="muted">Attendance overview for {{ today }}.</p></div><a class="btn" href="{{ url_for('attendance') }}">Mark attendance</a></div>
+<div class="stats"><div class="stat"><small>Total students</small><strong>{{ total }}</strong></div><div class="stat"><small>Present today</small><strong>{{ present }}</strong></div><div class="stat"><small>Absent today</small><strong>{{ absent }}</strong></div></div>
+<div class="panel"><div class="panel-head"><h3>Recent attendance records</h3><a href="{{ url_for('reports') }}">View reports →</a></div>
+{% if recent %}<div class="table-wrap"><table><tr><th>Date</th><th>Student</th><th>Roll number</th><th>Status</th></tr>{% for r in recent %}<tr><td>{{ r.attendance_date }}</td><td>{{ r.name }}</td><td>{{ r.roll_no or '-' }}</td><td><span class="pill {{ r.status|lower }}">{{ r.status }}</span></td></tr>{% endfor %}</table></div>{% else %}<p class="muted">No attendance records yet. Mark attendance to get started.</p>{% endif %}</div>
+{% endblock %}

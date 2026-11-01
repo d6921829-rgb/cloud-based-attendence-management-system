@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block content %}
+<section class="hero"><div><span class="eyebrow">SMART • SIMPLE • SECURE</span><h1>Attendance management,<br><span>made effortless.</span></h1>
+<p>Manage student records, mark daily attendance and view attendance reports from one simple web application.</p>
+<div class="actions"><a class="btn" href="{{ url_for('login') }}">Sign in</a><a class="btn secondary" href="{{ url_for('register') }}">Register as student</a></div></div>
+<div class="hero-card"><div class="cloud">☁</div><h3>AttendCloud</h3><p>One place for attendance records</p><div class="mini-stats"><div><b>01</b><small>Admin portal</small></div><div><b>02</b><small>Student portal</small></div><div><b>03</b><small>Reports</small></div></div></div></section>
+<section class="features"><article><b>Daily attendance</b><p>Mark students present or absent by date.</p></article><article><b>Student dashboard</b><p>Students can view their attendance history.</p></article><article><b>Attendance reports</b><p>View totals and attendance percentages.</p></article></section>
+{% endblock %}

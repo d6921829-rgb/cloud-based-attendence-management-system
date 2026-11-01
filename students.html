@@ -1,0 +1,3 @@
+{% extends "base.html" %}{% block title %}Students{% endblock %}{% block content %}
+<div class="page-head"><div><span class="eyebrow">ADMIN PORTAL</span><h1>Students</h1><p class="muted">Registered student accounts.</p></div></div>
+<div class="panel"><div class="table-wrap"><table><tr><th>Roll number</th><th>Name</th><th>Email</th></tr>{% for s in students %}<tr><td>{{ s.roll_no }}</td><td>{{ s.name }}</td><td>{{ s.email }}</td></tr>{% else %}<tr><td colspan="3">No students registered yet.</td></tr>{% endfor %}</table></div></div>{% endblock %}

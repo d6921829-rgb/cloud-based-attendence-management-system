@@ -1,0 +1,3 @@
+{% extends "base.html" %}{% block title %}Attendance Reports{% endblock %}{% block content %}
+<div class="page-head"><div><span class="eyebrow">ADMIN PORTAL</span><h1>Attendance reports</h1><p class="muted">Overall attendance summary for each student.</p></div></div>
+<div class="panel"><div class="table-wrap"><table><tr><th>Roll number</th><th>Student</th><th>Present</th><th>Absent</th><th>Total</th><th>Attendance %</th></tr>{% for r in report %}<tr><td>{{ r.roll_no }}</td><td>{{ r.name }}</td><td>{{ r.present }}</td><td>{{ r.absent }}</td><td>{{ r.total }}</td><td><b>{{ r.percentage }}%</b></td></tr>{% else %}<tr><td colspan="6">No student data available.</td></tr>{% endfor %}</table></div></div>{% endblock %}

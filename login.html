@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block title %}Login{% endblock %}{% block content %}
+<div class="form-wrap"><h2>Welcome back</h2><p class="muted">Sign in to your attendance account.</p>
+<form method="post"><label>Email address</label><input type="email" name="email" required placeholder="you@example.com">
+<label>Password</label><input type="password" name="password" required placeholder="Enter password">
+<button class="btn full">Sign in</button></form><p class="muted center">New student? <a href="{{ url_for('register') }}">Create an account</a></p>
+<div class="demo"><b>Demo admin login</b><br>Email: admin@college.com<br>Password: Admin@123</div></div>{% endblock %}
